@@ -28,7 +28,7 @@ Multiple PowerShell scripts that:
 Output reports/files for validation and auditing
 
 ### Usage: Created and run the following PowerShell scripts as an administrator;
-Created a script for automated system monitoring and reporting:
+* Created a script for automated system monitoring and reporting:
 ##### # Script to monitor system events for security logs
 ##### $BeginTime = (Get-Date).AddHours(-24)
 ##### $Events = Get-WinEvent -LogName Security | Where-Object {
@@ -37,12 +37,12 @@ Created a script for automated system monitoring and reporting:
 ##### $Events | Select-Object TimeCreated, Id, LevelDisplayName, Message |
     Format-Table -AutoSize |
     Out-File "$env:USERPROFILE\Desktop\SecurityLogReport.txt"
-###### Write-Host "Security Log Report generated at $env:USERPROFILE\Desktop\SecurityLogReport.txt"
-##### Run the script for event monitoring using the command below;
+##### Write-Host "Security Log Report generated at $env:USERPROFILE\Desktop\SecurityLogReport.txt"
+### Run the script for event monitoring using the command below;
 .\MonitorSystemEvents.ps1
 
 
-Created a script to optimize user management:
+* Created a script to optimize user management:
 ##### # Script to add multiple users and assign them to groups
 ##### $Users = @(
 ##### @{ Name = "JohnDoe"; Password = "P@ssw0rd1"; Group = "Administrators" },
@@ -55,11 +55,11 @@ Created a script to optimize user management:
 ##### }
 ##### Write-Host "Users successfully created and assigned to respective groups."
 
-##### Run the script for user management using the command:
+### Run the script for user management using the command:
  .\ManageUsers.ps1
 
 
-Created the script below to streamline file management and backup:
+* Created the script below to streamline file management and backup:
 ##### # Script to backup files
 ##### $SourceDir = "C:\ImportantFiles"
 ##### $BackupRoot = "E:\Backups"
@@ -72,11 +72,11 @@ Created the script below to streamline file management and backup:
 ##### # Copy files
 ##### Copy-Item -Path "$SourceDir\*" -Destination $BackupDir -Recurse -Force
 #### Write-Host "Files copied from $SourceDir to $BackupDir successfully."
-##### Run the backup script using the command below;
+### Run the backup script using the command below;
 .\BackupFiles.ps1
 
 
-Designed an approach for network configuration;
+* Designed an approach for network configuration;
 ##### # Script to configure network settings
 ##### $InterfaceAlias = "Ethernet"
 ##### $IPAddress = "192.168.1.100"
@@ -88,7 +88,7 @@ Designed an approach for network configuration;
 ##### # Set DNS server
 ##### Set-DnsClientServerAddress -InterfaceAlias $InterfaceAlias -ServerAddresses $DNSServer
 ##### Write-Host "Network configuration updated successfully."
-##### Run the network configuration script using the command below;
+### Run the network configuration script using the command below;
 .\ConfigureNetwork.ps1
 
 ### Conclusion and industry relevance:
