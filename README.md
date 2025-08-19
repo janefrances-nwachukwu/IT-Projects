@@ -38,7 +38,7 @@ Output reports/files for validation and auditing
     Format-Table -AutoSize |
     Out-File "$env:USERPROFILE\Desktop\SecurityLogReport.txt"
 ##### Write-Host "Security Log Report generated at $env:USERPROFILE\Desktop\SecurityLogReport.txt"
-### Run the script for event monitoring using the command below;
+#### Run the script for event monitoring using the command below;
 .\MonitorSystemEvents.ps1
 
 
@@ -55,7 +55,7 @@ Output reports/files for validation and auditing
 ##### }
 ##### Write-Host "Users successfully created and assigned to respective groups."
 
-### Run the script for user management using the command:
+#### Run the script for user management using the command:
  .\ManageUsers.ps1
 
 
@@ -71,8 +71,8 @@ Output reports/files for validation and auditing
 ##### }
 ##### # Copy files
 ##### Copy-Item -Path "$SourceDir\*" -Destination $BackupDir -Recurse -Force
-#### Write-Host "Files copied from $SourceDir to $BackupDir successfully."
-### Run the backup script using the command below;
+##### Write-Host "Files copied from $SourceDir to $BackupDir successfully."
+#### Run the backup script using the command below;
 .\BackupFiles.ps1
 
 
@@ -88,7 +88,7 @@ Output reports/files for validation and auditing
 ##### # Set DNS server
 ##### Set-DnsClientServerAddress -InterfaceAlias $InterfaceAlias -ServerAddresses $DNSServer
 ##### Write-Host "Network configuration updated successfully."
-### Run the network configuration script using the command below;
+#### Run the network configuration script using the command below;
 .\ConfigureNetwork.ps1
 
 ### Conclusion and industry relevance:
