@@ -28,7 +28,7 @@ Multiple PowerShell scripts that:
 Output reports/files for validation and auditing
 
 ### Usage: Created and run the following PowerShell scripts as an administrator;
-* Created a script for automated system monitoring and reporting:
+### Created a script for automated system monitoring and reporting:
 ##### # Script to monitor system events for security logs
 ##### $BeginTime = (Get-Date).AddHours(-24)
 ##### $Events = Get-WinEvent -LogName Security | Where-Object {
@@ -42,7 +42,7 @@ Output reports/files for validation and auditing
 .\MonitorSystemEvents.ps1
 
 
-* Created a script to optimize user management:
+### Created a script to optimize user management:
 ##### # Script to add multiple users and assign them to groups
 ##### $Users = @(
 ##### @{ Name = "JohnDoe"; Password = "P@ssw0rd1"; Group = "Administrators" },
@@ -59,7 +59,7 @@ Output reports/files for validation and auditing
  .\ManageUsers.ps1
 
 
-* Created the script below to streamline file management and backup:
+### Created the script below to streamline file management and backup:
 ##### # Script to backup files
 ##### $SourceDir = "C:\ImportantFiles"
 ##### $BackupRoot = "E:\Backups"
@@ -76,7 +76,7 @@ Output reports/files for validation and auditing
 .\BackupFiles.ps1
 
 
-* Designed an approach for network configuration;
+### Designed an approach for network configuration;
 ##### # Script to configure network settings
 ##### $InterfaceAlias = "Ethernet"
 ##### $IPAddress = "192.168.1.100"
