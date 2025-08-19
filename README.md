@@ -24,6 +24,7 @@ Multiple PowerShell scripts that:
 * Automate user creation & group assignments
 * Backup files automatically
 * Configure static IP settings
+
 Output reports/files for validation and auditing
 ### Conclusion and industry relevance:
 In modern IT environments, efficiency, scalability, and security are critical. Manual execution of routine administrative tasks increases the risk of human error, wastes valuable time, and makes it difficult to maintain consistent security practices across systems. By automating these tasks with PowerShell, this project demonstrates how IT teams can:
