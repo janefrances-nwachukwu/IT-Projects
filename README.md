@@ -1,5 +1,5 @@
 # IT-Projects
-## Project Topic: Automating Common IT Tasks
+## Project Topic: Automating Common IT Tasks With PowerShell
 ### Objective:
 To develop and deploy PowerShell scripts to manage an IT corporate network by automating common administrative tasks on a Windows operating system and maintaining a secure and organized system
 ### Project Description:
@@ -16,10 +16,15 @@ Creation of multiple PowerShell scripts to automate system monitoring, user mana
 * Designed an approach for network configuration
 ### Tools Used:
 * Windows Server 2022 VM
-* Powershell
-* Note Pad
+* Powershell (Built-in on Windows)
+* Note Pad for script editing
 ### Deliverables:
-Multiple PowerShell scripts that automate common administrative tasks and generate output files.
+Multiple PowerShell scripts that:
+* Generate event log reports
+* Automate user creation & group assignments
+* Backup files automatically
+* Configure static IP settings
+Output reports/files for validation and auditing
 ### Conclusion and industry relevance:
 In modern IT environments, efficiency, scalability, and security are critical. Manual execution of routine administrative tasks increases the risk of human error, wastes valuable time, and makes it difficult to maintain consistent security practices across systems. By automating these tasks with PowerShell, this project demonstrates how IT teams can:
 * Enhance Security Monitoring: Automated log collection and reporting ensures timely detection of suspicious activity, supporting incident response and compliance requirements.
