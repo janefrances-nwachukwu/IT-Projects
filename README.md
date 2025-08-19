@@ -1,4 +1,3 @@
-# IT-Projects Security and IAM projects
 ## Project Topic: Automating Common IT Tasks With PowerShell
 ### Objective:
 To develop and deploy PowerShell scripts to manage an IT corporate network by automating common administrative tasks on a Windows operating system and maintaining a secure and organized system
