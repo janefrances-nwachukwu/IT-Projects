@@ -20,65 +20,6 @@ Creation of multiple PowerShell scripts to automate system monitoring, user mana
 * Note Pad
 ### Deliverables:
 Multiple PowerShell scripts that automate common administrative tasks and generate output files.
-### Usage: Created and run the following PowerShell scripts as an administrator;
-* Created a script for automated system monitoring and reporting:
-#### # Script to monitor system events for security logs
-$BeginTime = (Get-Date).AddHours(-24)
-$Events = Get-WinEvent -LogName Security | Where-Object { $_.TimeCreated -ge $BeginTime -and ($_.LevelDisplayName -eq "Information" -or $_.LevelDisplayName -eq "Error") }
-$Events | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-Table -AutoSize | Out-File "$env:USERPROFILE\Desktop\SecurityLogReport.txt"
-Write-Host "Security Log Report generated at $env:USERPROFILE\Desktop\SecurityLogReport.txt"
-
-* Executed the script using the command; execute the script:
-### .\MonitorSystemEvents.ps1
-* Created a script to optimize user management:
-### # Script to add multiple users and assign them to groups
-$Users = @(
-@{ Name = "JohnDoe"; Password = "P@ssw0rd1"; Group = "Administrators" },
-@{ Name = "JaneSmith"; Password = "P@ssw0rd2"; Group = "Users" }
-)
-foreach ($User in $Users) {
-$SecurePassword = ConvertTo-SecureString -String $User.Password -AsPlainText -Force
-New-LocalUser -Name $User.Name -Password $SecurePassword -FullName $User.Name -Description "Added by script" -AccountNeverExpires
-Add-LocalGroupMember -Group $User.Group -Member $User.Name
-}
-Write-Host "Users successfully created and assigned to respective groups."
-
-* Executed the script using the command:
-### .\ManageUsers.ps1
-
-* Created the script below to streamline file management and backup:
-### # Script to backup files
-$SourceDir = "C:\ImportantFiles"
-$BackupRoot = "E:\Backups"
-$BackupDir = "$BackupRoot\$(Get-Date -Format 'yyyy-MM-dd')"
-### # Check if backup directory exists
-if (-Not (Test-Path $BackupDir)) {
-New-Item -ItemType Directory -Path $BackupDir -Force
-Write-Host "Backup directory created at: $BackupDir"
-}
-### # Copy files
-Copy-Item -Path "$SourceDir\*" -Destination $BackupDir -Recurse -Force
-Write-Host "Files copied from $SourceDir to $BackupDir successfully."
-
-* Executed the script using the command below;
-.\BackupFiles.ps1
-
-* Designed an approach for network configuration;
-### # Script to configure network settings
-$InterfaceAlias = "Ethernet"
-$IPAddress = "192.168.1.100"
-$SubnetPrefix = 24
-$DefaultGateway = "192.168.1.1"
-$DNSServer = "8.8.8.8"
-### # Set IP address and gateway
-New-NetIPAddress -InterfaceAlias $InterfaceAlias -IPAddress $IPAddress -PrefixLength $SubnetPrefix -DefaultGateway $DefaultGateway -Confirm:$false
-### # Set DNS server
-Set-DnsClientServerAddress -InterfaceAlias $InterfaceAlias -ServerAddresses $DNSServer
-Write-Host "Network configuration updated successfully."
-
-* Executed the script with the command below;
-.\ConfigureNetwork.ps1
-
 ### Conclusion and industry relevance:
 In modern IT environments, efficiency, scalability, and security are critical. Manual execution of routine administrative tasks increases the risk of human error, wastes valuable time, and makes it difficult to maintain consistent security practices across systems. By automating these tasks with PowerShell, this project demonstrates how IT teams can:
 * Enhance Security Monitoring: Automated log collection and reporting ensures timely detection of suspicious activity, supporting incident response and compliance requirements.
