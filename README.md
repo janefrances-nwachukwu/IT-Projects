@@ -31,12 +31,16 @@ Output reports/files for validation and auditing
 Created a script for automated system monitoring and reporting:
 ##### # Script to monitor system events for security logs
 ##### $BeginTime = (Get-Date).AddHours(-24)
-##### $Events = Get-WinEvent -LogName Security | Where-Object { $_.TimeCreated -ge $BeginTime -and ($_.LevelDisplayName -eq "Information" -or $_.LevelDisplayName -eq "Error") }
-##### $Events | Select-Object TimeCreated, Id, LevelDisplayName, Message | Format-Table -AutoSize | Out-File "$env:USERPROFILE\Desktop\SecurityLogReport.txt"
-##### Write-Host "Security Log Report generated at $env:USERPROFILE\Desktop\SecurityLogReport.txt"
-
+##### $Events = Get-WinEvent -LogName Security | Where-Object {
+    $_.TimeCreated -ge $BeginTime -and ($_.LevelDisplayName -eq "Information" -or $_.LevelDisplayName -eq "Error")
+##### }
+##### $Events | Select-Object TimeCreated, Id, LevelDisplayName, Message |
+    Format-Table -AutoSize |
+    Out-File "$env:USERPROFILE\Desktop\SecurityLogReport.txt"
+###### Write-Host "Security Log Report generated at $env:USERPROFILE\Desktop\SecurityLogReport.txt"
 ##### Run the script for event monitoring using the command below;
 .\MonitorSystemEvents.ps1
+
 
 Created a script to optimize user management:
 ##### # Script to add multiple users and assign them to groups
@@ -54,6 +58,7 @@ Created a script to optimize user management:
 ##### Run the script for user management using the command:
  .\ManageUsers.ps1
 
+
 Created the script below to streamline file management and backup:
 ##### # Script to backup files
 ##### $SourceDir = "C:\ImportantFiles"
@@ -67,9 +72,9 @@ Created the script below to streamline file management and backup:
 ##### # Copy files
 ##### Copy-Item -Path "$SourceDir\*" -Destination $BackupDir -Recurse -Force
 #### Write-Host "Files copied from $SourceDir to $BackupDir successfully."
-
 ##### Run the backup script using the command below;
 .\BackupFiles.ps1
+
 
 Designed an approach for network configuration;
 ##### # Script to configure network settings
@@ -83,7 +88,6 @@ Designed an approach for network configuration;
 ##### # Set DNS server
 ##### Set-DnsClientServerAddress -InterfaceAlias $InterfaceAlias -ServerAddresses $DNSServer
 ##### Write-Host "Network configuration updated successfully."
-
 ##### Run the network configuration script using the command below;
 .\ConfigureNetwork.ps1
 
